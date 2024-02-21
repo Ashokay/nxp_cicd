@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 NXP -->
+<collateral
+	xmlns="https://www.nxp.com/collateral/0.0.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<resource
+		id="com.nxp.s32k3.s32k3xx.rtd.collateral.rtd.HOWTO_Port_An_S32DS_Example_To_Use_Another_Compiler"
+		name="HOWTO Port an S32DS example to use another compiler"
+		description="HOWTO Port an S32DS example to use another compiler"
+		referenceResourceTypeId="s32ds.collateral.resources.resourceType.tutorials"
+		urlLink="http://org.eclipse.ui.intro/runAction?pluginId=com.nxp.s32ds.ext.rcp.intro&amp;class=com.nxp.s32ds.ext.rcp.intro.actions.OpenUrlAction&amp;url=${eclipse_home}../S32DS/software/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M30I0R0/doc/howto/HOWTO_Port_An_S32DS_Example_To_Use_Another_Compiler.pdf">
+		<tags>
+			<tagId id="s32ds.collateral.tags.tag.tutorials"/>
+		</tags>
+	</resource>
+
+	<feature
+		id="com.nxp.s32k3.s32k3xx.rtd.collateral.baseFeature"
+		name="S32K3XX AUTOSAR 4.4 - R21-11 RTD 3.0.0 D2303 collateral base feature"
+		description="S32K3XX AUTOSAR 4.4 - R21-11 RTD 3.0.0 D2303 collateral base feature">
+		<resources>
+			<resourceId id="com.nxp.s32k3.s32k3xx.rtd.collateral.rtd.HOWTO_Port_An_S32DS_Example_To_Use_Another_Compiler" />
+		</resources>
+	</feature>
+    
+	<pack
+		id="com.nxp.s32ds.s32k3.s32k3xx.rtd.collateral.resources.pack.s32SdkPackage"
+		name="S32K3XX AUTOSAR 4.4 - R21-11 RTD 3.0.0 D2303"
+		description="The S32K3XX Real Time Drivers AUTOSAR 4.7 Version 3.0.0 is AUTOSAR 4.7.0 compliant. The S32K3XX Real Time Drivers AUTOSAR 4.7 Version 3.0.0 can be used also in a non-AUTOSAR environment, as a collection of peripheral drivers designed to simplify and accelerate application development on NXP microcontrollers."
+		image="data:image/png;base64,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">
+		<features>
+			<featureId id = "com.nxp.s32k3.s32k3xx.rtd.collateral.baseFeature" />
+		</features>
+	</pack>
+
+</collateral>

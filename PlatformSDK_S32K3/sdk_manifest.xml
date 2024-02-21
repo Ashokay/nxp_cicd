@@ -1,0 +1,1613 @@
+<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" api_version="3.0.0" format_version="3.2" id="PlatformSDK_S32K3" name="S32K3 AUTOSAR 4.4 - R21-11 RTD 3.0.0 D2303" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.2.xsd">
+  
+  <ksdk id="PlatformSDK_S32K3" name="S32K3 AUTOSAR 4.4 - R21-11 RTD 3.0.0 D2303" version="3.0.0" />
+  <compilers>
+    <compiler id="compiler_arm" name="arm" type="arm" />
+    <compiler id="compiler_gcc" name="gcc" type="gcc" />
+    <compiler id="compiler_iar" name="iar" type="iar" />
+    <compiler id="compiler_diab" name="diab" type="diab" />
+    <compiler id="compiler_ghs" name="ghs" type="ghs" />
+  <compiler id="compiler_dsgcc" name="dsgcc" type="dsgcc" />
+  </compilers>
+  <toolchainSettings>
+    <toolchainSetting compiler="compiler_gcc" full_name="Cross ARM GCC" id="ilg.gnuarmeclipse.managedbuild.cross.toolchain.elf.debug" name="gcc" toolchain="gcc" version="1.0.0">
+      <option id="ilg.gnuarmeclipse.managedbuild.cross.option.c.compiler.defs" type="stringList" user_name="Defined symbols (-D)" variants="NpwNonPe PeGen">
+        <value>"CPU_$|package|"</value>
+      </option>
+      <option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.scriptfile" type="stringList" user_name="Script files (-T)" variants="NpwPe">
+        <value>"${ProjDirPath}/Project_Settings/Linker_Files/ProcessorExpert.ld"</value>
+      </option>
+      <option id="ilg.gnuarmeclipse.managedbuild.cross.option.cpp.linker.other" type="string" user_name="Other linker flags" variants="NpwPe NpwNonPe">
+        <value>-specs=nosys.specs -specs=nano.specs</value>
+      </option>
+      <option id="ilg.gnuarmeclipse.managedbuild.cross.option.addtools.printsize" type="boolean" user_name="Print size" variants="NpwPe NpwNonPe">
+        <value>true</value>
+      </option>
+      <option id="ilg.gnuarmeclipse.managedbuild.cross.option.warnings.allwarn" type="boolean" user_name="Enable all common warnings (-Wall)" variants="NpwPe NpwNonPe">
+        <value>true</value>
+      </option>
+    </toolchainSetting>
+    <toolchainSetting compiler="compiler_gcc" full_name="Atollic GCC toolchain" id="com.atollic.truestudio.exe.debug.toolchain" name="atl">
+      <option id="com.atollic.truestudio.gcc.symbols.defined" type="stringList" user_name="Defined symbols (-D)" variants="NpwNonPe PeGen">
+        <value>"CPU_$|package|"</value>
+        <value>"__ATOLLIC__"</value>
+      </option>
+      <option id="com.atollic.truestudio.as.symbols.defined" type="stringList" user_name="Defined symbols (-D)" variants="NpwNonPe PeGen">
+        <value>"__ATOLLIC__"</value>
+      </option>
+      <option id="com.atollic.truestudio.gcc.cstandard" type="string" user_name="C standard" variants="NpwPe NpwNonPe">
+        <value>com.atollic.truestudio.gcc.cstandard.c99</value>
+      </option>
+      <option id="com.atollic.truestudio.ldcc.general.scriptfile" type="string" user_name="Script files (-T)" variants="NpwPe">
+        <value>${ProjDirPath}/Project_Settings/Linker_Files/ProcessorExpert.ld</value>
+      </option>
+    </toolchainSetting>
+    <toolchainSetting compiler="compiler_iar" full_name="IAR Toolchain for ARM - 7.x" id="iar.arm.toolchain.project.exe.configuration.debug.toolchain.v5.4.0" name="iar">
+      <option id="iar.arm.toolchain.compiler.option.defines.v5.4.0" type="stringList" user_name="Defined symbols:" variants="NpwNonPe PeGen">
+        <value>"CPU_$|package|"</value>
+      </option>
+      <option id="iar.arm.toolchain.linker.option.icfFile.v5.4.0" type="string" user_name="Script files (-T)" variants="NpwPe">
+        <value>${ProjDirPath}/Project_Settings/Linker_Files/ProcessorExpert.icf</value>
+      </option>
+    </toolchainSetting>
+  </toolchainSettings>
+
+  <toolchains>
+    <toolchain compiler="compiler_gcc" full_name="GCC ARM Embedded" id="gcc" name="GCC_ARM_Embedded" type="gcc" vendor="GCC ARM Embedded" vendor_url="http://launchpad.net/gcc-arm-embedded" version="5.4.2016.3" />
+    <toolchain compiler="compiler_iar" full_name="IAR Embedded Workbench for ARM" id="iar" name="IAR_Embedded_Workbench_for_ARM" type="iar" vendor="IAR Systems" vendor_url="http://www.iar.com" version="8.11.1" />
+    <toolchain compiler="compiler_gcc" full_name="Kinetis Design Studio" id="kds" name="Kinetis_Design_Studio" type="kds" vendor="NXP Semiconductors" vendor_url="http://www.nxp.com" version="3.2.0" />
+  <toolchain compiler="compiler_gcc" full_name="Design Studio GCC" id="dsgcc" name="Design Studio GCC" type="dsgcc" vendor="NXP Semiconductors" vendor_url="http://www.nxp.com" version="10.0" />
+  </toolchains>
+
+  <boards />
+
+  <devices>
+    <device brief="S32K" category="S32K3xx" full_name="S32K344" id="S32K344" name="S32K344">
+      <core fpu="true" id="core0_S32K344" name="core0" type="cm7" />
+      <package id="S32K344_172MQFP" name="S32K344_172MQFP" />
+      <package id="S32K344_257BGA" name="S32K344_257BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K324" id="S32K324" name="S32K324">
+      <core fpu="true" id="core0_S32K324" name="core0" type="cm7" />
+      <package id="S32K324_172MQFP" name="S32K324_172MQFP" />
+      <package id="S32K324_257BGA" name="S32K324_257BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K314" id="S32K314" name="S32K314">
+      <core fpu="true" id="core0_S32K314" name="core0" type="cm7" />
+      <package id="S32K314_172MQFP" name="S32K314_172MQFP" />
+      <package id="S32K314_257BGA" name="S32K314_257BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K312" id="S32K312" name="S32K312">
+      <core fpu="true" id="core0_S32K312" name="core0" type="cm7" />
+      <package id="S32K312_172MQFP" name="S32K312_172MQFP" />
+      <package id="S32K312_100MQFP" name="S32K312_100MQFP" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K342" id="S32K342" name="S32K342">
+      <core fpu="true" id="core0_S32K342" name="core0" type="cm7" />
+      <package id="S32K342_172MQFP" name="S32K342_172MQFP" />
+      <package id="S32K342_100MQFP" name="S32K342_100MQFP" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K322" id="S32K322" name="S32K322">
+      <core fpu="true" id="core0_S32K322" name="core0" type="cm7" />
+      <package id="S32K322_172MQFP" name="S32K322_172MQFP" />
+      <package id="S32K322_100MQFP" name="S32K322_100MQFP" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K341" id="S32K341" name="S32K341">
+      <core fpu="true" id="core0_S32K341" name="core0" type="cm7" />
+      <package id="S32K341_172MQFP" name="S32K341_172MQFP" />
+      <package id="S32K341_100MQFP" name="S32K341_100MQFP" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K396" id="S32K396" name="S32K396">
+      <core fpu="true" id="core0_S32K396" name="core0" type="cm7" />
+      <package id="S32K396_289BGA" name="S32K396_289BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K394" id="S32K394" name="S32K394">
+      <core fpu="true" id="core0_S32K394" name="core0" type="cm7" />
+      <package id="S32K394_289BGA" name="S32K394_289BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K358" id="S32K358" name="S32K358">
+      <core fpu="true" id="core0_S32K358" name="core0" type="cm7" />
+      <package id="S32K358_172MQFP" name="S32K358_172MQFP" />
+      <package id="S32K358_289BGA" name="S32K358_289BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K348" id="S32K348" name="S32K348">
+      <core fpu="true" id="core0_S32K348" name="core0" type="cm7" />
+      <package id="S32K348_172MQFP" name="S32K348_172MQFP" />
+      <package id="S32K348_289BGA" name="S32K348_289BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K338" id="S32K338" name="S32K338">
+      <core fpu="true" id="core0_S32K338" name="core0" type="cm7" />
+      <package id="S32K338_172MQFP" name="S32K338_172MQFP" />
+      <package id="S32K338_289BGA" name="S32K338_289BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K328" id="S32K328" name="S32K328">
+      <core fpu="true" id="core0_S32K328" name="core0" type="cm7" />
+      <package id="S32K328_172MQFP" name="S32K328_172MQFP" />
+      <package id="S32K328_289BGA" name="S32K328_289BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K388" id="S32K388" name="S32K388">
+      <core fpu="true" id="core0_S32K388" name="core0" type="cm7" />
+      <package id="S32K388_289BGA" name="S32K388_289BGA" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K311" id="S32K311" name="S32K311">
+      <core fpu="true" id="core0_S32K311" name="core0" type="cm7" />
+      <package id="S32K311_100MQFP" name="S32K311_100MQFP" />
+      <package id="S32K311_48LQFP" name="S32K311_48LQFP" />
+    </device>
+    <device brief="S32K" category="S32K3xx" full_name="S32K310" id="S32K310" name="S32K310">
+      <core fpu="true" id="core0_S32K311" name="core0" type="cm7" />
+      <package id="S32K310_100MQFP" name="S32K310_100MQFP" />
+      <package id="S32K310_48LQFP" name="S32K310_48LQFP" />
+    </device>
+    <device brief="S32M" category="S32M2xx" full_name="S32M276" id="S32M276" name="S32M276">
+      <core fpu="true" id="core0_S32M276" name="core0" type="cm7" />
+      <package id="S32M276_64LQFP" name="S32M276_64LQFP" />
+    </device>
+    <device brief="S32M" category="S32M2xx" full_name="S32M274" id="S32M274" name="S32M274">
+      <core fpu="true" id="core0_S32M274" name="core0" type="cm7" />
+      <package id="S32M274_64LQFP" name="S32M274_64LQFP" />
+    </device>
+  </devices>
+  <components>
+  
+  <component brief="Adc Component" dependency="platform.driver.rte_adc platform.driver.det platform.driver.BaseNXP" devices="S32K310 S32K311 S32K328 S32K338 S32K348 S32K312 S32K314 S32K322 S32K324 S32K341 S32K342 S32K344 S32K358 S32K394 S32K396 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G378A S32G379A S32G398A S32G399A S32G338M S32G339M S32G358A S32G359A S32R45 S32R418AA S32R418AB S32R416LB SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279 S32M274 S32M276" full_name="Adc" id="platform.driver.adc" name="Adc" type="driver">
+        <source path="RTD/Adc_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Adc_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K310 S32K311 S32K328 S32K338 S32K348 S32K312 S32K314 S32K322 S32K324 S32K341 S32K342 S32K344 S32K358 S32K394 S32K396 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G378A S32G379A S32G398A S32G399A S32G338M S32G339M S32G358A S32G359A S32R45 S32R418AA S32R418AB S32R416LB SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279 S32M274 S32M276" full_name="Rte_Adc" id="platform.driver.rte_adc" name="Rte_Adc" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Adc.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Adc.h" />
+        </source>
+    </component>
+
+    <component brief="Adc Sar Driver" dependency="platform.driver.rte_adc platform.driver.BaseNXP" devices="S32K310 S32K311 S32K328 S32K338 S32K348 S32K312 S32K314 S32K322 S32K324 S32K341 S32K342 S32K344 S32K358 S32K394 S32K396 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G378A S32G379A S32G398A S32G399A S32G338M S32G339M S32G358A S32G359A S32R45 S32R418AA S32R418AB S32R416LB SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279 S32M274 S32M276" full_name="adc_sar" id="platform.driver.adc_sar" name="adc_sar" type="driver">
+        <source path="RTD/Adc_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Adc_Sar_Ip*.c" />
+        </source>
+        <source path="RTD/Adc_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Adc_Sar_Ip*.h" />
+        </source>
+    </component>
+
+    <component brief="Sd Adc Driver" dependency="platform.driver.rte_adc platform.driver.BaseNXP" devices="S32K394 S32K396" full_name="sdadc" id="platform.driver.sdadc" name="sdadc" type="driver">
+        <source path="RTD/Adc_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Sdadc*.c" />
+            <files mask="DSPSS*.c" />
+        </source>
+        <source path="RTD/Adc_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Sdadc*.h" />
+            <files mask="DSPSS*.h" />
+        </source>
+    </component>
+
+    <component brief="Bctu Driver" dependency="platform.driver.rte_adc platform.driver.BaseNXP" devices="S32K310 S32K311 S32K328 S32K338 S32K348 S32K312 S32K314 S32K322 S32K324 S32K341 S32K342 S32K344 S32K358 S32K394 S32K396 S32M274 S32M276" full_name="bctu" id="platform.driver.bctu" name="bctu" type="driver">
+        <source path="RTD/Adc_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Bctu_Ip*.c" />
+        </source>
+        <source path="RTD/Adc_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Bctu_Ip*.h" />
+        </source>
+    </component>
+
+    <component brief="Ctu Driver" dependency="platform.driver.rte_adc platform.driver.BaseNXP" devices="S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G378A S32G379A S32G398A S32G399A S32G338M S32G339M S32G358A S32G359A S32R45 S32R418AA S32R418AB S32R416LB SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="ctu" id="platform.driver.ctu" name="ctu" type="driver">
+        <source path="RTD/Adc_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Ctu_Ip*.c" />
+        </source>
+        <source path="RTD/Adc_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Ctu_Ip*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_ae platform.driver.det" devices="S32M276 S32M274" full_name="Ae" id="platform.driver.ae" name="ae" type="driver">
+        <source path="RTD/Ae_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Ae_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+   
+    <component brief="" dependency="" devices="S32M276 S32M274" full_name="Rte_Ae" id="platform.driver.rte_ae" name="Rte_Ae" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Ae.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Ae.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_ae" devices="S32M276 S32M274" full_name="aec" id="platform.driver.aec" name="Aec" type="driver">
+        <source path="RTD/Ae_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Aec*.c" />
+        </source>
+        <source path="RTD/Ae_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Aec*.h" />
+        </source>
+    </component>
+    
+    <component brief="" dependency="" devices="S32M276 S32M274" full_name="hvm" id="platform.driver.hvm" name="hvm" type="driver">
+        <source path="RTD/Ae_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Hvm*.c" />
+        </source>
+        <source path="RTD/Ae_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Hvm*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_can platform.driver.det" devices="S32M276 S32M274 S32K388 S32K358 S32K348 S32K338 S32K328 S32K396 S32K394 S32K314 S32K312 S32K311 S32K310 S32K344 S32K342 S32K341 S32K324 S32K322" full_name="Can_43_FLEXCAN" id="platform.driver.Can_43_FLEXCAN" name="Can_43_FLEXCAN" type="driver">
+        <source path="RTD/Can_43_FLEXCAN_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Can_43_FLEXCAN_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+    <component brief="" dependency="" devices="S32M276 S32M274 S32K388 S32K358 S32K348 S32K338 S32K328 S32K396 S32K394 S32K314 S32K312 S32K311 S32K310 S32K344 S32K342 S32K341 S32K324 S32K322" full_name="Rte_Can" id="platform.driver.rte_can" name="Rte_Can" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Can_43_FLEXCAN.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Can_43_FLEXCAN.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_can" devices="S32M276 S32M274 S32K388 S32K358 S32K348 S32K338 S32K328 S32K396 S32K394 S32K314 S32K312 S32K311 S32K310 S32K344 S32K342 S32K341 S32K324 S32K322" full_name="FlexCAN" id="platform.driver.FlexCAN" name="FlexCAN" type="driver">
+        <source path="RTD/Can_43_FLEXCAN_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="FlexCAN_Ip*.c" />
+        </source>
+        <source path="RTD/Can_43_FLEXCAN_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="FlexCAN_Ip*.h" />
+        </source>
+    </component>
+<component brief="" dependency="Can" devices="S32M276 S32M274 S32K388 S32K358 S32K348 S32K338 S32K328 S32K396 S32K394 S32K314 S32K312 S32K311 S32K310 S32K344 S32K342 S32K341 S32K324 S32K322" full_name="CanIf" id="platform.driver.CanIf" name="CanIf" type="driver">
+        <source path="RTD/CanIf_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/CanIf_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_cantrcv platform.driver.det platform.driver.CanIf" devices="S32M274 S32M276" full_name="CanTrcv_43_AE" id="platform.driver.cantrcv_43_ae" name="CanTrcv_43_AE" type="driver">
+        <source path="RTD/CanTrcv_43_AE_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/CanTrcv_43_AE_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32M274 S32M276" full_name="Rte_CanTrcv" id="platform.driver.rte_cantrcv" name="Rte_CanTrcv" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_CanTrcv_43_AE.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_CanTrcv_43_AE.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_crc platform.driver.det platform.driver.osif" devices="S32K344 S32K342 S32K341 S32K324 S32K322 S32K314 S32K312 S32K396 S32K394 S32K358 S32K311 S32K310 S32K328 S32K338 S32K348 S32K388 S32M276 S32M274" full_name="Crc" id="platform.driver.crc" name="Crc" type="driver">
+        <source path="RTD/Crc_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Crc_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+    <component brief="" dependency="platform.driver.osif" devices="S32K344 S32K342 S32K341 S32K324 S32K322 S32K314 S32K312 S32K396 S32K394 S32K358 S32K311 S32K310 S32K328 S32K338 S32K348 S32K388 S32M276 S32M274" full_name="Crc_Ip" id="platform.driver.crc_ip" name="Crc_Ip" type="driver">
+        <source path="RTD/Crc_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Crc_Ip*.c" />
+        </source>
+        <source path="RTD/Crc_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Crc_Ip*.h" />
+        </source>
+    </component>
+    
+    <component brief="" dependency="" devices="S32K344 S32K342 S32K341 S32K324 S32K322 S32K314 S32K312 S32K396 S32K394 S32K358 S32K311 S32K310 S32K328 S32K338 S32K348 S32K388 S32M276 S32M274" full_name="Rte_Crc" id="platform.driver.rte_crc" name="Rte_Crc" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Crc.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Crc.h" />
+        </source>
+    </component>
+<component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K358 S32K396 S32K311 S32M242 S32M244 S32M276 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G338M S32G339M S32G358A S32G359A S32G378A S32G379A S32G398A S32G399A S32R45 S32R41 S32R418AA S32R418AB S32R416LB SAF8544 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="CryIf" id="platform.driver.cryif" name="CryIf" type="driver">
+        <source path="RTD/CryIf_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/CryIf_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="" devices="S32K344 S32K358 S32K328 S32K338 S32K348 S32K396 S32K394 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K311 S32K310 S32M242 S32M244 S32M276 S32M274 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G338M S32G339M S32G358A S32G359A S32G378A S32G379A S32G398A S32G399A S32R45 S32R41 S32R418AA S32R418AB S32R416LB SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="Rte_Crypto" id="platform.driver.rte_crypto" name="Rte_Crypto" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Crypto.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Crypto.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_crypto platform.driver.det platform.driver.csm platform.driver.cryif" devices="S32K344 S32K358 S32K328 S32K338 S32K348 S32K396 S32K394 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K311 S32K310 S32M242 S32M244 S32M276 S32M274 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G338M S32G339M S32G358A S32G359A S32G378A S32G379A S32G398A S32G399A S32R45 S32R41 S32R418AA S32R418AB S32R416LB SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="Crypto" id="platform.driver.Crypto" name="Crypto" type="driver">
+        <source path="RTD/Crypto_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Crypto_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+        <source path="RTD/Crypto_TS_T40D34M30I0R0/examples/S32DS/hse_interface/$|device_category|" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+        <source path="RTD/Crypto_TS_T40D34M30I0R0/examples/S32DS/hse_interface/$|device_full_name|" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_crypto" devices="S32K344 S32K358 S32K328 S32K338 S32K348 S32K396 S32K394 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K311 S32K310 S32M242 S32M244 S32M276 S32M274 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G338M S32G339M S32G358A S32G359A S32G378A S32G379A S32G398A S32G399A S32R45 S32R41 S32R418AA S32R418AB S32R416LB SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="Hse" id="platform.driver.Hse" name="Hse" type="driver">
+        <source path="RTD/Crypto_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Hse_Ip.c" />
+            <files mask="Mu_Ip_Irq.c" />
+        </source>
+        <source path="RTD/Crypto_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Hse_Ip.h" />
+            <files mask="Mu_Ip.h" />
+        </source>
+        <source path="RTD/Crypto_TS_T40D34M30I0R0/examples/S32DS/hse_interface/$|device_category|" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+        <source path="RTD/Crypto_TS_T40D34M30I0R0/examples/S32DS/hse_interface/$|device_full_name|" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K358 S32K396 S32K311 S32M242 S32M244 S32M276 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G338M S32G339M S32G358A S32G359A S32G378A S32G379A S32G398A S32G399A S32R45 S32R41 S32R418AA S32R418AB S32R416LB SAF8544 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="Csm" id="platform.driver.csm" name="Csm" type="driver">
+        <source path="RTD/Csm_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_dem" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32K311 S32M276 S32K394 S32K310 S32M274" full_name="Dem" id="platform.driver.dem" name="Dem" type="driver">
+        <source path="RTD/Dem_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Dem_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32K311 S32M276 S32K394 S32K310 S32M274" full_name="Rte_Dem" id="platform.driver.rte_dem" name="Rte_Dem" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Rte_Dem_Type.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32K311 S32M276 S32K394 S32K310 S32M274" full_name="Det" id="platform.driver.det" name="Det" type="driver">
+        <source path="RTD/Det_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Det_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_dio" devices="S32K310 S32K311 S32K312 S32K314 S32K322 S32K324 S32K328 S32K338 S32K341 S32K342 S32K344 S32K348 S32K358 S32K388 S32K396 S32K394 S32M276 S32M274" full_name="Dio" id="platform.driver.dio" name="Dio" type="driver">
+        <source path="RTD/Dio_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Dio_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_dio" devices="S32K310 S32K311 S32K312 S32K314 S32K322 S32K324 S32K328 S32K338 S32K341 S32K342 S32K344 S32K348 S32K358 S32K388 S32K396 S32K394 S32M276 S32M274" full_name="Siul2_Dio" id="platform.driver.siul2_dio" name="Siul2_Dio" type="driver">
+        <source path="RTD/Dio_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Siul2_Dio_Ip.c" />
+        </source>
+        <source path="RTD/Dio_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Siul2_Dio_Ip.h" />
+        </source>
+    </component>
+
+    
+    <component brief="" dependency="" devices="S32K310 S32K311 S32K312 S32K314 S32K322 S32K324 S32K328 S32K338 S32K341 S32K342 S32K344 S32K348 S32K358 S32K388 S32K396 S32K394 S32M276 S32M274" full_name="Rte_Dio" id="platform.driver.rte_dio" name="Rte_Dio" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Dio.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Dio.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.det platform.driver.osif" devices="S32M274 S32M276 S32M244 S32M242" full_name="dpga" id="platform.driver.dpga" name="dpga" type="driver">
+        <source path="RTD/Dpga_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Dpga_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.osif" devices="S32M274 S32M276 S32M244 S32M242" full_name="dpga_ip" id="platform.driver.dpga_ip" name="dpga_ip" type="driver">
+        <source path="RTD/Dpga_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Dpga_Ip*.c" />
+        </source>
+        <source path="RTD/Dpga_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Dpga_Ip*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32K311 S32M276 S32K394 S32K310 S32M274" full_name="EcuM" id="platform.driver.ecum" name="EcuM" type="driver">
+        <source path="RTD/EcuM_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/EcuM_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_eth platform.driver.det platform.driver.ethif platform.driver.ethswt platform.driver.ethtrcv" devices="S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K396 S32K394 S32K358 S32K348 S32K338 S32K328" full_name="Eth_43_GMAC" id="platform.driver.eth_43_gmac" name="Eth_43_GMAC" type="driver">
+        <source path="RTD/Eth_43_GMAC_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Eth_43_GMAC_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+    
+    <component brief="" dependency="" devices="S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K396 S32K394 S32K358 S32K348 S32K338 S32K328" full_name="Rte_Eth" id="platform.driver.rte_eth" name="Rte_Eth" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Eth_43_GMAC.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Eth_43_GMAC.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K396 S32K394 S32K358 S32K348 S32K338 S32K328" full_name="Gmac" id="platform.driver.gmac" name="Gmac" type="driver">
+        <source path="RTD/Eth_43_GMAC_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Gmac*.c" />
+        </source>
+        <source path="RTD/Eth_43_GMAC_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Gmac*.h" />
+            <files mask="Emac_Ip_Wrapper.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="" devices="S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K358 S32K388 S32K396" full_name="EthIf" id="platform.driver.ethif" name="EthIf" type="driver">
+        <source path="RTD/EthIf_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/EthIf_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="" devices="S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K358 S32K388 S32K396" full_name="EthSwt" id="platform.driver.ethswt" name="EthSwt" type="driver">
+        <source path="RTD/EthSwt_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/EthSwt_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="" devices="S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K358 S32K388 S32K396" full_name="EthTrcv" id="platform.driver.ethtrcv" name="EthTrcv" type="driver">
+        <source path="RTD/EthTrcv_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/EthTrcv_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_fee" devices="S32K396 S32K342 S32K344 S32K314 S32K324 S32K312 S32K322 S32K341 S32K358 S32K311 S32K388 S32M274 S32M276 S32K328 S32K338 S32K348 S32K310 S32K394" full_name="Fee" id="platform.driver.fee" name="Fee" type="driver">
+        <source path="RTD/Fee_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Fee_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K396 S32K342 S32K344 S32K314 S32K324 S32K312 S32K322 S32K341 S32K358 S32K311 S32K388 S32M274 S32M276 S32K328 S32K338 S32K348 S32K310 S32K394" full_name="Rte_Fee" id="platform.driver.rte_fee" name="Rte_Fee" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Fee.h" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Fee.c" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_gdu platform.driver.det platform.driver.ecuc" devices="S32M276 S32M274" full_name="Gdu" id="platform.driver.gdu" name="Gdu" type="driver">
+        <source path="RTD/Gdu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+            <files mask="*.h" />
+        </source>
+        <source path="RTD/Gdu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32M276 S32M274" full_name="Rte_Gdu" id="platform.driver.rte_gdu" name="Rte_Gdu" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Gdu.h" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Gdu.c" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32M276 S32M274" full_name="Gdu_Ip" id="platform.driver.gdu_ip" name="Gdu_Ip" type="driver">
+        <source path="RTD/Gdu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Gdu_Ip.c" />
+            <files mask="Gdu_Ip.h" />
+            <files mask="Gdu_Ip_*.c" />
+            <files mask="Gdu_Ip_*.h" />
+        </source>
+        <source path="RTD/Gdu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Gdu_Ip.h" />
+            <files mask="Gdu_Ip_*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_gpt platform.driver.det" devices="S32K344 S32K314 S32K322 S32K324 S32K312 S32K341 S32K342 S32K394 S32K396 S32K310 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M274 S32M276" full_name="Gpt" id="platform.driver.gpt" name="Gpt" type="driver">
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_gpt" devices="S32K344 S32K314 S32K322 S32K324 S32K312 S32K341 S32K342 S32K394 S32K396 S32K310 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M274 S32M276" full_name="Pit" id="platform.driver.pit" name="Pit" type="driver">
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Pit_Ip.c" />
+        </source>
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Pit_Ip.h" />
+            <files mask="Pit_Ip_Types.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_gpt" devices="S32K344 S32K314 S32K322 S32K324 S32K312 S32K341 S32K342 S32K394 S32K396 S32K310 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M274 S32M276" full_name="Stm" id="platform.driver.stm" name="Stm" type="driver">
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Stm_Ip.c" />
+        </source>
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Stm_Ip.h" />
+            <files mask="Stm_Ip_Types.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_gpt" devices="S32K344 S32K314 S32K322 S32K324 S32K312 S32K341 S32K342 S32K394 S32K396 S32K310 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M274 S32M276" full_name="Rtc" id="platform.driver.rtc" name="Rtc" type="driver">
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Rtc_Ip.c" />
+        </source>
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Rtc_Ip.h" />
+            <files mask="Rtc_Ip_Types.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_gpt" devices="S32K344 S32K314 S32K322 S32K324 S32K312 S32K341 S32K342 S32K394 S32K396 S32K310 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M274 S32M276" full_name="Emios_Gpt" id="platform.driver.emios_gpt" name="Emios_Gpt" type="driver">
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Emios_Gpt_Ip.c" />
+        </source>
+        <source path="RTD/Gpt_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Emios_Gpt_Ip.h" />
+            <files mask="Emios_Gpt_Ip_Types.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K322 S32K324 S32K312 S32K341 S32K342 S32K394 S32K396 S32K310 S32K311 S32K358 S32K388 S32M274 S32M276" full_name="Rte_Gpt" id="platform.driver.rte_gpt" name="Rte_Gpt" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Gpt.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Gpt.h" />
+        </source>
+    </component>
+<component brief="" dependency="platform.driver.rte_i2c platform.driver.det" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32K388 S32M276 S32K310 S32M274 S32K394" full_name="I2c" id="platform.driver.cdd_i2c" name="I2c" type="driver">
+        <source path="RTD/I2c_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="CDD_I2c.c" />
+            <files mask="I2c_Ipw.c" />
+            <files mask="Lpi2c_Ip.c" />
+            <files mask="Lpi2c_Ip_Irq.c" />
+            <files mask="Lpi2c_Ip_HwAccess.c" />
+            <files mask="Flexio_I2c_Ip.c" />
+        </source>
+        <source path="RTD/I2c_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="CDD_I2c.h" />
+            <files mask="I2c_Types.h" />
+            <files mask="I2c_Ipw.h" />
+            <files mask="I2c_Ipw_Types.h" />
+            <files mask="Lpi2c_Ip.h" />
+            <files mask="Lpi2c_Ip_Types.h" />
+            <files mask="Lpi2c_Ip_Callbacks.h" />
+            <files mask="Lpi2c_Ip_Features.h" />
+            <files mask="Lpi2c_Ip_Irq.h" />
+            <files mask="Lpi2c_Ip_HwAccess.h" />
+            <files mask="Flexio_I2c_Ip.h" />
+            <files mask="Flexio_I2c_Ip_Types.h" />
+            <files mask="Flexio_I2c_Ip_Irq.h" />
+            <files mask="Flexio_I2c_Ip_Features.h" />
+            <files mask="Flexio_I2c_Ip_HwAccess.h" />
+            <files mask="Flexio_I2c_Ip_Callbacks.h" />
+        </source>
+    </component>
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32K388 S32M276 S32K310 S32M274 S32K394" full_name="Rte_I2c" id="platform.driver.rte_i2c" name="Rte_I2c" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_I2c.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_I2c.h" />
+        </source>
+    </component>
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32K388 S32M276 S32K310 S32M274 S32K394" full_name="Lpi2c" id="platform.driver.lpi2c" name="Lpi2c" type="driver">
+        <source path="RTD/I2c_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Lpi2c_Ip.c" />
+            <files mask="Lpi2c_Ip_Irq.c" />
+            <files mask="Lpi2c_Ip_HwAccess.c" />
+        </source>
+        <source path="RTD/I2c_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Lpi2c_Ip.h" />
+            <files mask="Lpi2c_Ip_Types.h" />
+            <files mask="Lpi2c_Ip_Callbacks.h" />
+            <files mask="Lpi2c_Ip_Features.h" />
+            <files mask="Lpi2c_Ip_Irq.h" />
+            <files mask="Lpi2c_Ip_HwAccess.h" />
+        </source>
+    </component>
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32K388 S32M276 S32K310 S32M274 S32K394" full_name="Flexio_I2c" id="platform.driver.flexio_i2c" name="Flexio_I2c" type="driver">
+        <source path="RTD/I2c_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Flexio_I2c_Ip.c" />
+        </source>
+        <source path="RTD/I2c_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Flexio_I2c_Ip.h" />
+            <files mask="Flexio_I2c_Ip_Types.h" />
+            <files mask="Flexio_I2c_Ip_Irq.h" />
+            <files mask="Flexio_I2c_Ip_Features.h" />
+            <files mask="Flexio_I2c_Ip_HwAccess.h" />
+            <files mask="Flexio_I2c_Ip_Callbacks.h" />
+        </source>
+    </component>
+<component brief="Flexio I2s IP Driver" dependency="platform.driver.rte_i2s platform.driver.osif platform.driver.flexio_mcl" devices="S32K388 S32K358 S32K348 S32K338 S32K328 S32K396 S32K394 S32K310 S32K311 S32K312 S32K314 S32K324 S32K344 S32K116 S32K118 S32K142 S32K144 S32K146 S32K148 S32K142W S32K144W S32K342 S32K341 S32K322 S32M244 S32M242 S32M276 S32M274" full_name="Flexio_I2s_Ip" id="platform.driver.flexio_i2s" name="Flexio_I2s_Ip" type="driver">
+        <source path="RTD/I2s_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Flexio_I2s_Ip.c" />
+            <files mask="Flexio_I2s_Ip_*.c" />
+        </source>
+        <source path="RTD/I2s_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Flexio_I2s_Ip.h" />
+            <files mask="Flexio_I2s_Ip_*.h" />
+        </source>
+    </component>
+
+    <component brief="Sai IP Driver" dependency="platform.driver.rte_i2s platform.driver.osif" devices="S32K388 S32K358 S32K348 S32K338 S32K328 S32K314 S32K324 S32K344 S32K148 S32K342 S32K341 S32K322" full_name="Sai_Ip" id="platform.driver.sai_ip" name="Sai_Ip" type="driver">
+        <source path="RTD/I2s_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Sai_Ip.c" />
+            <files mask="Sai_Ip_*.c" />
+        </source>
+        <source path="RTD/I2s_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Sai_Ip.h" />
+            <files mask="Sai_Ip_*.h" />
+        </source>
+    </component>
+
+    <component brief="I2s Driver" dependency="platform.driver.rte_i2s platform.driver.osif platform.driver.det platform.driver.mcl platform.driver.mcu" devices="S32K388 S32K358 S32K348 S32K338 S32K328 S32K396 S32K394 S32K310 S32K311 S32K312 S32K314 S32K324 S32K344 S32K116 S32K118 S32K142 S32K144 S32K146 S32K148 S32K142W S32K144W S32K342 S32K341 S32K322 S32M244 S32M242 S32M276 S32M274" full_name="I2s" id="platform.driver.i2s" name="I2s" type="driver">
+        <source path="RTD/I2s_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="CDD_I2s.c" />
+            <files mask="I2s_Ipw.c" />
+            <files mask="Flexio_I2s_Ip.c" />
+            <files mask="Flexio_I2s_Ip_*.c" />
+            <files mask="Sai_Ip.c" />
+            <files mask="Sai_Ip_*.c" />
+        </source>
+        <source path="RTD/I2s_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="CDD_I2s.h" />
+            <files mask="CDD_I2s_*.h" />
+            <files mask="I2s_Ipw.h" />
+            <files mask="I2s_Ipw_*.h" />
+            <files mask="Flexio_I2s_Ip.h" />
+            <files mask="Flexio_I2s_Ip_*.h" />
+            <files mask="Sai_Ip.h" />
+            <files mask="Sai_Ip_*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K358 S32K348 S32K338 S32K328 S32K396 S32K394 S32K310 S32K311 S32K312 S32K314 S32K324 S32K344 S32K116 S32K118 S32K142 S32K144 S32K146 S32K148 S32K142W S32K144W S32K342 S32K341 S32K322 S32M244 S32M242 S32M276 S32M274" full_name="Rte_I2s" id="platform.driver.rte_i2s" name="Rte_I2s" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_I2s.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_I2s.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_icu platform.driver.det" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32M276 S32K388 S32K310 S32M274 S32K394 " full_name="Icu" id="platform.driver.icu" name="Icu" type="driver">
+        <source path="RTD/Icu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Icu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32M276 S32K388 S32K310 S32M274 S32K394 " full_name="Rte_Icu" id="platform.driver.rte_icu" name="Rte_Icu" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Icu.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Icu.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_icu" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32M276 S32K388 S32K310 S32M274 S32K394 " full_name="Emios_Icu" id="platform.driver.emios_icu" name="Emios_Icu" type="driver">
+        <source path="RTD/Icu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Emios_Icu_Ip*.c" />
+        </source>
+        <source path="RTD/Icu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Emios_Icu_Ip*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_icu" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32M276 S32K388 S32K310 S32M274 S32K394 " full_name="Siul2_Icu" id="platform.driver.siul2_icu" name="Siul2_Icu" type="driver">
+        <source path="RTD/Icu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Siul2_Icu_Ip*.c" />
+        </source>
+        <source path="RTD/Icu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Siul2_Icu_Ip*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_icu" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32M276 S32K388 S32K310 S32M274 S32K394 " full_name="Wkpu" id="platform.driver.wkpu" name="Wkpu" type="driver">
+        <source path="RTD/Icu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Wkpu_Ip*.c" />
+        </source>
+        <source path="RTD/Icu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Wkpu_Ip*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_icu" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K322 S32K341 S32K396 S32K358 S32K311 S32K328 S32K338 S32K348 S32M276 S32K388 S32K310 S32M274 S32K394 " full_name="Cmp" id="platform.driver.cmp" name="Cmp" type="driver">
+        <source path="RTD/Icu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Cmp_Ip*.c" />
+        </source>
+        <source path="RTD/Icu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Cmp_Ip*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_lin platform.driver.det platform.driver.linif" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K358 S32K328 S32K338 S32K348 S32K311 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Lin_43_LPUART_FLEXIO" id="platform.driver.Lin_43_LPUART_FLEXIO" name="Lin_43_LPUART_FLEXIO" type="driver">
+        <source path="RTD/Lin_43_LPUART_FLEXIO_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Lin_43_LPUART_FLEXIO_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+    
+    <component brief="" dependency="" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K358 S32K328 S32K338 S32K348 S32K311 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Rte_Lin" id="platform.driver.rte_lin" name="Rte_Lin" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Lin_43_LPUART_FLEXIO.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Lin_43_LPUART_FLEXIO.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_lin" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K358 S32K328 S32K338 S32K348 S32K311 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Lpuart_Lin" id="platform.driver.Lpuart_Lin" name="Lpuart_Lin" type="driver">
+        <source path="RTD/Lin_43_LPUART_FLEXIO_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Lin_Ip_Common.c" />
+            <files mask="Lpuart_Lin_Ip_Hw_Access.c" />
+            <files mask="Lpuart_Lin_Ip_Irq.c" />
+            <files mask="Lpuart_Lin_Ip.c" />
+        </source>
+        <source path="RTD/Lin_43_LPUART_FLEXIO_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Lin_Ip_Common.h" />
+            <files mask="Lpuart_Lin_Ip_Hw_Access.h" />
+            <files mask="Lpuart_Lin_Ip.h" />
+            <files mask="Lpuart_Lin_Ip_Types.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_lin" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K358 S32K328 S32K338 S32K348 S32K311 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Flexio_Lin" id="platform.driver.Flexio_Lin" name="Flexio_Lin" type="driver">
+        <source path="RTD/Lin_43_LPUART_FLEXIO_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Lin_Ip_Common.c" />
+            <files mask="Flexio_Lin_Ip.c" />
+        </source>
+        <source path="RTD/Lin_43_LPUART_FLEXIO_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Lin_Ip_Common.h" />
+            <files mask="Flexio_Lin_Ip.h" />
+            <files mask="Flexio_Lin_Ip_Irq.h" />
+            <files mask="Flexio_Lin_Ip_Types.h" />
+        </source>
+    </component>
+<component brief="" dependency="" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K358 S32K328 S32K338 S32K348 S32K311 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="LinIf" id="platform.driver.linif" name="LinIf" type="driver">
+        <source path="RTD/LinIf_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/LinIf_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.det platform.driver.linif" devices="S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32M244 S32K146 S32K148 S32M242 S32M276 S32M274" full_name="LinTrcv_43_AE" id="platform.driver.LinTrcv_43_AE" name="LinTrcv_43_AE" type="driver">
+        <source path="RTD/LinTrcv_43_AE_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/LinTrcv_43_AE_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+<component brief="" dependency="platform.driver.rte_mcl platform.driver.det" devices="S32K312 S32K344 S32K358 S32K328 S32K338 S32K348 S32K314 S32K324 S32K342 S32K322 S32K341 S32K394 S32K396 S32K310 S32K311 S32K388 S32M276 S32M274 S32G274A S32G233A S32G234M S32G254A S32G274A_Rev2 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242 SJA1110 S32R41 S32R418AA S32R418AB S32R416LB S32G399A S32G398A S32G378A S32G379A S32G338M S32G339M S32G358A S32G359A S32R45 SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279 " full_name="Mcl" id="platform.driver.mcl" name="Mcl" type="driver">
+        <source path="RTD/Mcl_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Mcl_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_mcl" devices="S32K312 S32K344 S32K358 S32K328 S32K338 S32K348 S32K314 S32K324 S32K342 S32K322 S32K341 S32K394 S32K396 S32K310 S32K311 S32K388 S32M276 S32M274 S32G274A S32G233A S32G234M S32G254A S32G274A_Rev2 S32R45 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242 SJA1110 S32R41 S32R418AA S32R418AB S32R416LB S32G399A S32G398A S32G378A S32G379A S32G338M S32G339M S32G358A S32G359A SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="dma" id="platform.driver.dma" name="dma" type="driver">
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Dma*.c" />
+      </source>
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Dma*.h" />
+      </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_mcl" devices="S32K312 S32K344 S32K358 S32K328 S32K338 S32K348 S32K314 S32K324 S32K342 S32K322 S32K341 S32K394 S32K396 S32K310 S32K311 S32K388 S32M276 S32M274 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279 " full_name="trgmux" id="platform.driver.trgmux" name="trgmux" type="driver">
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Trgmux*.c" />
+      </source>
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Trgmux*.h" />
+      </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_mcl" devices="S32K312 S32K344 S32K358 S32K328 S32K338 S32K348 S32K314 S32K324 S32K342 S32K322 S32K341 S32K394 S32K396 S32K310 S32K311 S32K388 S32M276 S32M274 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279 " full_name="Lcu" id="platform.driver.lcu" name="Lcu" type="driver">
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Lcu*.c" />
+      </source>
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Lcu*.h" />
+      </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_mcl" devices="S32K312 S32K344 S32K358 S32K328 S32K338 S32K348 S32K314 S32K324 S32K342 S32K322 S32K341 S32K394 S32K396 S32K310 S32K311 S32K388 S32M276 S32M274 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279 " full_name="emios_mcl" id="platform.driver.emios_mcl" name="emios_mcl" type="driver">
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Emios_Mcl*.c" />
+      </source>
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Emios_Mcl*.h" />
+      </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_mcl" devices="S32E270 S32E277 S32E278 S32E279 " full_name="etimer_mcl" id="platform.driver.etimer_mcl" name="etimer_mcl" type="driver">
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Etimer_Mcl*.c" />
+      </source>
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Etimer_Mcl*.h" />
+      </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_mcl" devices="S32K312 S32K344 S32K358 S32K328 S32K338 S32K348 S32K314 S32K324 S32K342 S32K322 S32K341 S32K394 S32K396 S32K310 S32K311 S32K388 S32M276 S32M274 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242" full_name="flexio_mcl" id="platform.driver.flexio_mcl" name="flexio_mcl" type="driver">
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Flexio_Mcl*.c" />
+      </source>
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Flexio_Mcl*.h" />
+      </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_mcl" devices="S32G274A S32G233A S32G234M S32G254A S32G274A_Rev2 S32R45 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242 S32R41 S32R418AA S32R418AB S32R416LB S32G399A S32G398A S32G378A S32G379A S32G338M S32G339M S32G358A S32G359A" full_name="ftm_mcl" id="platform.driver.ftm_mcl" name="ftm_mcl" type="driver">
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Ftm_Mcl*.c" />
+      </source>
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Ftm_Mcl*.h" />
+      </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_mcl" devices="S32K312 S32K344 S32K358 S32K328 S32K338 S32K348 S32K314 S32K324 S32K342 S32K322 S32K341 S32K394 S32K396 S32K310 S32K311 S32K388 S32M276 S32M274 S32G274A S32G233A S32G234M S32G254A S32G274A_Rev2 S32R45 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242 S32R41 S32R418AA S32R418AB S32R416LB S32G399A S32G398A S32G378A S32G379A S32G338M S32G339M S32G358A S32G359A SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="cache" id="platform.driver.cache" name="cache" type="driver">
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Cache*.c" />
+      </source>
+      <source path="RTD/Mcl_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Cache*.h" />
+      </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K314 S32K324 S32K342 S32K322 S32K341 S32K394 S32K396 S32K310 S32K311 S32K388 S32M276 S32M274 S32K312 S32K344 S32K358 S32K328 S32K338 S32K348 S32G274A S32G233A S32G234M S32G254A S32G274A_Rev2 S32R45 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242 SJA1110 S32R41 S32R418AA S32R418AB S32R416LB S32G399A S32G398A S32G378A S32G379A S32G338M S32G339M S32G358A S32G359A SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279 " full_name="Rte_Mcl" id="platform.driver.rte_mcl" name="Rte_Mcl" type="utilities">
+            <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+                <files mask="SchM_Mcl.c" />
+            </source>
+            <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+                <files mask="SchM_Mcl.h" />
+            </source>
+    </component>
+<component brief="" dependency="platform.driver.rte_mcu platform.driver.det" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Mcu" id="platform.driver.mcu" name="Mcu" type="driver">
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="*.c" />
+      </source>
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="*.h" />
+      </source>
+    </component>
+    <component brief="" dependency="platform.driver.rte_mcu platform.driver.det" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Power" id="platform.driver.power" name="Power" type="driver">
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Power*.c" />
+        <files mask="MC_RGM*.c" />
+        <files mask="MC_ME*.c" />
+        <files mask="PMC*.c" />
+      </source>
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Power*.h" />
+        <files mask="MC_RGM*.h" />
+        <files mask="MC_ME*.h" />
+        <files mask="PMC*.h" />
+      </source>
+    </component>
+    <component brief="" dependency="platform.driver.rte_mcu platform.driver.det" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Ram" id="platform.driver.ram" name="Ram" type="driver">
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Ram*.c" />
+      </source>
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Ram*.h" />
+      </source>
+    </component>
+    <component brief="" dependency="platform.driver.rte_mcu platform.driver.det" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Clock" id="platform.driver.clock" name="clock" type="driver">
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Clock_Ip*.c" />
+      </source>
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Clock_Ip*.h" />
+      </source>
+    </component>
+    <component brief="" dependency="platform.driver.rte_mcu" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Clock_Ip_ReferencePoints" id="platform.driver.Clock_Ip_ReferencePoints" name="Clock_Ip_ReferencePoints" type="driver">
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+        <files mask="Clock_Ip.c" />
+      </source>
+      <source path="RTD/Mcu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+        <files mask="Clock_Ip.h" />
+      </source>
+    </component>
+	<component brief="" dependency="" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276 S32K310 S32K394 S32M274" full_name="Rte_Mcu" id="platform.driver.rte_mcu" name="Rte_Mcu" type="utilities">
+			<source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+				<files mask="SchM_Mcu.c" />
+			</source>
+			<source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+				<files mask="SchM_Mcu.h" />
+			</source>
+	</component>
+<component brief="" dependency="platform.driver.rte_memacc platform.driver.det platform.driver.osif" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276" full_name="MemAcc" id="platform.driver.memacc" name="MemAcc" type="driver">
+        <source path="RTD/MemAcc_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/MemAcc_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+        <source path="RTD/Memif_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="MemIf_Types.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276" full_name="Rte_MemAcc" id="platform.driver.rte_memacc" name="Rte_MemAcc" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_MemAcc.h" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_MemAcc.c" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_mem_43_eep platform.driver.det" devices="S32K358" full_name="Mem_43_Eep" id="platform.driver.mem_43_eep" name="Mem_43_Eep" type="driver">
+        <source path="RTD/Mem_43_Eep_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+            <files mask="*.h" />
+        </source>
+        <source path="RTD/Mem_43_Eep_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+    
+    <component brief="" dependency="" devices="S32K358" full_name="Rte_Mem_43_Eep" id="platform.driver.rte_mem_43_eep" name="Rte_Mem_43_Eep" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Mem_43_Eep.h" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Mem_43_Eep.c" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K358" full_name="usdhc" id="platform.driver.usdhc" name="usdhc" type="driver">
+        <source path="RTD/Mem_43_Eep_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Usdhc_Ip*.c" />
+            <files mask="Usdhc_Ip*.h" />
+        </source>
+        <source path="RTD/Mem_43_Eep_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Usdhc_Ip*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K358" full_name="sd_emmc" id="platform.driver.sd_emmc" name="sd_emmc" type="driver">
+        <source path="RTD/Mem_43_Eep_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Sd_Emmc_Ip*.c" />
+            <files mask="Sd_Emmc_Ip*.h" />
+        </source>
+        <source path="RTD/Mem_43_Eep_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Sd_Emmc_Ip*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_mem_43_exfls platform.driver.det platform.driver.osif" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276" full_name="Mem_43_ExFls" id="platform.driver.mem_43_exfls" name="Mem_43_ExFls" type="driver">
+        <source path="RTD/Mem_43_ExFls_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Mem_43_ExFls_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+        <source path="RTD/Memif_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="MemIf_Types.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276" full_name="Rte_Mem_43_ExFls" id="platform.driver.rte_mem_43_exfls" name="Rte_Mem_43_ExFls" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Mem_43_ExFls.h" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Mem_43_ExFls.c" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.osif" devices="S32K311 S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K396 S32M276" full_name="qspi" id="platform.driver.qspi" name="qspi" type="driver">
+        <source path="RTD/Mem_43_ExFls_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Qspi_Ip*.c" />
+        </source>
+        <source path="RTD/Mem_43_ExFls_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Qspi_Ip*.h" />
+        </source>
+    </component>
+
+
+<component brief="" dependency="platform.driver.rte_mem_43_infls platform.driver.det platform.driver.osif platform.driver.cache" devices="S32K396 S32K388 S32K358 S32K348 S32K344 S32K342 S32K338 S32K328 S32K314 S32K324 S32K312 S32K311 S32K322 S32K341 S32M276 S32M274" full_name="Mem_43_InFls" id="platform.driver.mem_43_infls" name="Mem_43_InFls" type="driver">
+        <source path="RTD/Mem_43_InFls_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+        <source path="RTD/Mem_43_InFls_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K396 S32K388 S32K358 S32K348 S32K344 S32K342 S32K338 S32K328 S32K314 S32K324 S32K312 S32K311 S32K322 S32K341 S32M276 S32M274" full_name="Rte_Mem_43_InFls" id="platform.driver.rte_mem_43_infls" name="Rte_Mem_43_InFls" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Mem_43_InFls.h" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Mem_43_InFls.c" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.osif platform.driver.cache" devices="S32K396 S32K388 S32K358 S32K348 S32K344 S32K342 S32K338 S32K328 S32K314 S32K324 S32K312 S32K311 S32K322 S32K341 S32M276 S32M274" full_name="C40" id="platform.driver.c40" name="C40" type="driver">
+        <source path="RTD/Mem_43_InFls_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="C40_Ip.h" />
+            <files mask="C40_Ip_Types.h" />
+        </source>
+        <source path="RTD/Mem_43_InFls_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="C40_Ip.c" />
+        </source>
+    </component>
+
+
+<component brief="" dependency="platform.driver.rte_ocotp platform.driver.det platform.driver.ecuc" devices="S32M276 S32M274" full_name="Ocotp" id="platform.driver.ocotp" name="Ocotp" type="driver">
+        <source path="RTD/Ocotp_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+            <files mask="*.h" />
+        </source>
+        <source path="RTD/Ocotp_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32M276 S32M274" full_name="Rte_Ocotp" id="platform.driver.rte_ocotp" name="Rte_Ocotp" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Ocotp.h" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Ocotp.c" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32M276 S32M274" full_name="Mem_Otp_Ip" id="platform.driver.mem_otp_ip" name="Mem_Otp_Ip" type="driver">
+        <source path="RTD/Ocotp_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Mem_Otp_Ip.c" />
+            <files mask="Mem_Otp_Ip.h" />
+            <files mask="Mem_Otp_Ip_*.c" />
+            <files mask="Mem_Otp_Ip_*.h" />
+        </source>
+        <source path="RTD/Ocotp_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Mem_Otp_Ip.h" />
+            <files mask="Mem_Otp_Ip_*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_ocu platform.driver.det" devices="S32K310 S32K311 S32K312 S32K314 S32K322 S32K324 S32K328 S32K338 S32K341 S32K342 S32K344 S32K348 S32K358 S32K388 S32K394 S32K396 S32M274 S32M276" full_name="Ocu" id="platform.driver.ocu" name="Ocu" type="driver">
+        <source path="RTD/Ocu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Ocu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+
+    </component>
+        <component brief="" dependency="" devices="S32K310 S32K311 S32K312 S32K314 S32K322 S32K324 S32K328 S32K338 S32K341 S32K342 S32K344 S32K348 S32K358 S32K388 S32K394 S32K396 S32M274 S32M276" full_name="Rte_Ocu" id="platform.driver.rte_ocu" name="Rte_Ocu" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Ocu.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Ocu.h" />
+        </source>
+    </component>
+    
+    <component brief="" dependency="platform.driver.rte_ocu" devices="S32K310 S32K311 S32K312 S32K314 S32K322 S32K324 S32K328 S32K338 S32K341 S32K342 S32K344 S32K348 S32K358 S32K388 S32K394 S32K396 S32M274 S32M276" full_name="Emios_Ocu" id="platform.driver.emios_ocu" name="Emios_Ocu" type="driver">
+        <source path="RTD/Ocu_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Emios*.c" />
+        </source>
+        <source path="RTD/Ocu_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Emios*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_os" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32K311 S32M276 S32K394 S32K310 S32M274" full_name="Os" id="platform.driver.os" name="Os" type="driver">
+        <source path="RTD/Os_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Os_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+    <component brief="" dependency="" devices="S32K312 S32K314 S32K324 S32K344 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32K311 S32M276 S32K394 S32K310 S32M274" full_name="Rte_Os" id="platform.driver.rte_os" name="Rte_Os" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Rte_Os_Type.h" />
+        </source>
+</component>
+
+<component brief="" dependency="platform.driver.det" devices="S32K344 S32K324 S32K314 S32K312 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32K311 S32M276 S32K394 S32K310 S32M274 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G338M S32G339M S32G358A S32G359A S32G378A S32G379A S32G398A S32G399A S32R45 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242 SJA1110 S32R41 S32R418AA S32R418AB S32R416LB S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279 SAF8544" full_name="osif" id="platform.driver.osif" name="osif" type="driver">
+        <source path="RTD/BaseNXP_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="OsIf_*.c" />
+        </source>
+        <source path="RTD/BaseNXP_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="OsIf.h" />
+            <files mask="OsIf_*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.det" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K396 S32K394 S32K328 S32K338 S32K348 S32K358 S32K388 S32K311 S32K310 S32M276 S32M274" full_name="Platform" id="platform.driver.Platform" name="Platform" type="driver">
+        <source path="RTD/Platform_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Platform_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K396 S32K394 S32K328 S32K338 S32K348 S32K358 S32K388 S32K311 S32K310 S32M276 S32M274" full_name="IntCtrl_Ip" id="platform.driver.IntCtrl_Ip" name="IntCtrl_Ip" type="driver">
+        <source path="RTD/Platform_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="IntCtrl_Ip.c" />
+        </source>
+        <source path="RTD/Platform_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="IntCtrl_Ip.h" />
+            <files mask="IntCtrl_Ip_CfgDefines.h" />
+            <files mask="IntCtrl_Ip_TypesDef.h" />
+        </source>
+    </component>
+        
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K396 S32K394 S32K328 S32K338 S32K348 S32K358 S32K388 S32K311 S32K310 S32M276 S32M274" full_name="System_Ip" id="platform.driver.System_Ip" name="System_Ip" type="driver">
+        <source path="RTD/Platform_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="System_Ip.h" />
+            <files mask="System_Ip_CfgDefines.h" />
+        </source>
+    </component>
+        
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K396 S32K394 S32K328 S32K338 S32K348 S32K358 S32K388 S32K311 S32K310 S32M276 S32M274" full_name="Intm_Ip" id="platform.driver.Intm_Ip" name="Intm_Ip" type="driver">
+        <source path="RTD/Platform_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Intm_Ip.h" />
+            <files mask="Intm_Ip_CfgDefines.h" />
+
+        </source>
+    </component>
+    
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K396 S32K394 S32K328 S32K338 S32K348 S32K358 S32K388 S32K311 S32K310 S32M276 S32M274" full_name="IPV_Mpu_M7_Ip" id="platform.driver.IPV_Mpu_M7_Ip" name="IPV_Mpu_M7_Ip" type="driver">
+        <source path="RTD/Platform_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Mpu_M7_Ip.c" />
+        </source>
+        <source path="RTD/Platform_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Mpu_M7_Ip.h" />
+            <files mask="Mpu_M7_Ip_Types.h" />
+            <files mask="Mpu_M7_Ip_TrustedFunctions.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_port platform.driver.igf_port" devices="S32K344 S32K314 S32K324 S32K311 S32K312 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32M276 S32K310 S32K394 S32M274" full_name="Port" id="platform.driver.port" name="Port" type="driver">
+        <source path="RTD/Port_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Port_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_port" devices="S32K344 S32K314 S32K324 S32K311 S32K312 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32M276 S32K310 S32K394 S32M274" full_name="Siul2_Port" id="platform.driver.siul2_port" name="Siul2_Port" type="driver">
+        <source path="RTD/Port_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Siul2_Port_Ip.c" />
+            <files mask="Tspc_Port_Ip.c" />
+        </source>
+        <source path="RTD/Port_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Siul2_Port_Ip.h" />
+            <files mask="Siul2_Port_Ip_Types.h" />
+            <files mask="Tspc_Port_Ip.h" />
+            <files mask="Tspc_Port_Ip_Types.h" />
+        </source>
+    </component>
+    <component brief="" dependency="platform.driver.rte_port" devices="S32K344 S32K314 S32K324 S32K311 S32K312 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32M276 S32K310 S32K394 S32M274" full_name="Pins" id="platform.driver.pins" name="Pins" type="driver">
+        <source path="RTD/Port_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Siul2_Port_Ip.c" />
+            <files mask="Tspc_Port_Ip.c" />
+        </source>
+        <source path="RTD/Port_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Siul2_Port_Ip.h" />
+            <files mask="Siul2_Port_Ip_Types.h" />
+            <files mask="Tspc_Port_Ip.h" />
+            <files mask="Tspc_Port_Ip_Types.h" />
+        </source>
+    </component>
+
+    
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K311 S32K312 S32K342 S32K341 S32K322 S32K396 S32K358 S32K328 S32K338 S32K348 S32K388 S32M276 S32K310 S32K394 S32M274" full_name="Rte_Port" id="platform.driver.rte_port" name="Rte_Port" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Port.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Port.h" />
+        </source>
+    </component>
+
+<component brief="Pwm Driver" dependency="platform.driver.rte_pwm platform.driver.det platform.driver.mcl" devices="S32K344 S32K324 S32K314 S32K312 S32K341 S32K342 S32K394 S32K396 S32K358 S32K310 S32K311 S32K328 S32K338 S32K348 S32M274 S32M276 S32K388 S32K322" full_name="Pwm" id="platform.driver.pwm" name="Pwm" type="driver">
+        <source path="RTD/Pwm_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Pwm_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    
+    <component brief="Rte Pwm" dependency="" devices="S32K344 S32K324 S32K314 S32K312 S32K341 S32K342 S32K394 S32K396 S32K358 S32K310 S32K311 S32K328 S32K338 S32K348 S32M274 S32M276 S32K388 S32K322" full_name="Rte_Pwm" id="platform.driver.rte_pwm" name="Rte_Pwm" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Pwm.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Pwm.h" />
+        </source>
+    </component>
+
+    
+    <component brief="Emios Pwm Driver" dependency="platform.driver.rte_pwm platform.driver.emios_mcl" devices="S32K344 S32K324 S32K314 S32K312 S32K341 S32K342 S32K394 S32K396 S32K358 S32K310 S32K311 S32K328 S32K338 S32K348 S32M274 S32M276 S32K388 S32K322" full_name="Emios_Pwm" id="platform.driver.emios_pwm" name="Emios" type="driver">
+        <source path="RTD/Pwm_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Emios_Pwm_Ip*.c" />
+        </source>
+        <source path="RTD/Pwm_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Emios_Pwm_Ip*.h" />
+        </source>
+    </component>
+
+    
+    <component brief="Flexio Pwm Driver" dependency="platform.driver.rte_pwm platform.driver.flexio_mcl" devices="S32K344 S32K324 S32K314 S32K312 S32K341 S32K342 S32K394 S32K396 S32K358 S32K310 S32K311 S32K328 S32K338 S32K348 S32M274 S32M276 S32K388 S32K322" full_name="Flexio_Pwm" id="platform.driver.flexio_pwm" name="Flexio" type="driver">
+        <source path="RTD/Pwm_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Flexio_Pwm_Ip*.c" />
+        </source>
+        <source path="RTD/Pwm_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Flexio_Pwm_Ip*.h" />
+        </source>
+    </component>
+
+    
+    <component brief="FlexPwm Ip Driver" devices="S32K394 S32K396" full_name="FlexPwm_Ip" id="platform.driver.flexpwm_ip" name="FlexPwm" type="driver">
+        <source path="RTD/Pwm_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="FlexPwm_Ip*.c" />
+        </source>
+        <source path="RTD/Pwm_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="FlexPwm_Ip*.h" />
+        </source>
+    </component>
+<component brief="" dependency="platform.driver.det platform.driver.rte_rm" devices="S32K310 S32K311 S32K312 S32K344 S32K342 S32K314 S32K324 S32K341 S32K322 S32K328 S32K338 S32K348 S32K358 S32K388 S32K394 S32K396 S32G233A S32G234M S32G254A S32G274A S32G274A_Rev2 S32G338M S32G339M S32G358A S32G359A S32G378A S32G379A S32G398A S32G399A S32R45 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242 S32M274 S32M276 SJA1110 S32R41 S32R418AA S32R418AB S32R416LB SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="Rm" id="platform.driver.Rm" name="Rm" type="driver">
+        <source path="RTD/Rm_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Rm_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+    <component brief="" dependency="" devices="S32K310 S32K311 S32K312 S32K344 S32K342 S32K341 S32K314 S32K322 S32K324 S32K328 S32K338 S32K348 S32K358 S32K388 S32K394 S32K396 S32G274A S32G233A S32G234M S32G254A S32G274A_Rev2 S32G338M S32G339M S32G358A S32G359A S32G378A S32G379A S32G398A S32G399A S32R45 S32K116 S32K118 S32K142 S32K142W S32K144 S32K144W S32K146 S32K148 S32M244 S32M242 S32M274 S32M276 SJA1110 S32R41 S32R418AA S32R418AB S32R416LB SAF8544 S32Z270 S32Z277 S32Z278 S32Z279 S32E270 S32E277 S32E278 S32E279" full_name="Rte_Rm" id="platform.driver.rte_rm" name="Rte_Rm" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Rm.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Rm.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="" devices="S32K396 S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K358 S32K328 S32K348 S32K311 S32K388 S32M276 S32K394 S32K338 S32K310 S32M274" full_name="CDD_Sent" id="platform.driver.cdd_sent" name="CDD_Sent" type="driver">
+        <source path="RTD/Sent_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="CDD_Sent.c" />
+            <files mask="Sent_Ipw.c" />
+            <files mask="Flexio_Sent_Ip.c" />
+            <files mask="Flexio_Sent_Ip_Irq.c" />
+        </source>
+        <source path="RTD/Sent_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="CDD_Sent.h" />
+            <files mask="Sent_Types.h" />
+            <files mask="Sent_Ipw.h" />
+            <files mask="Sent_Ipw_Types.h" />
+            <files mask="Flexio_Sent_Ip.h" />
+            <files mask="Flexio_Sent_Ip_Types.h" />
+            <files mask="Flexio_Sent_Ip_Irq.h" />
+            <files mask="Flexio_Sent_Ip_HwAccess.h" />
+        </source>
+    </component>
+    <component brief="" dependency="" devices="S32K396 S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K358 S32K328 S32K348 S32K311 S32K388 S32M276 S32K394 S32K338 S32K310 S32M274" full_name="Rte_Sent" id="platform.driver.rte_sent" name="Rte_Sent" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Sent.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Sent.h" />
+        </source>
+    </component>  
+    <component brief="" dependency="" devices="S32K396 S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K358 S32K328 S32K348 S32K311 S32K388 S32M276 S32K394 S32K338 S32K310 S32M274" full_name="Flexio_Sent_Ip" id="platform.driver.flexio_sent_ip" name="Flexio_Sent_Ip" type="driver">
+        <source path="RTD/Sent_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Flexio_Sent_Ip.c" />
+            <files mask="Flexio_Sent_Ip_Irq.c" />
+        </source>
+        <source path="RTD/Sent_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Flexio_Sent_Ip.h" />
+            <files mask="Flexio_Sent_Ip_Types.h" />
+            <files mask="Flexio_Sent_Ip_Irq.h" />
+            <files mask="Flexio_Sent_Ip_HwAccess.h" />
+        </source>
+    </component>
+<component brief="" dependency="platform.driver.rte_spi platform.driver.det" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K396 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M276 S32M274 S32K310 S32K394" full_name="Spi" id="platform.driver.spi" name="Spi" type="driver">
+        <source path="RTD/Spi_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Spi_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+    <component brief="" dependency="" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K396 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M276 S32M274 S32K310 S32K394" full_name="Rte_Spi" id="platform.driver.rte_spi" name="Rte_Spi" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Spi.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Spi.h" />
+        </source>
+    </component>
+    <component brief="" dependency="platform.driver.rte_spi" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K396 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M276 S32M274 S32K310 S32K394" full_name="Lpspi" id="platform.driver.lpspi" name="Lpspi" type="driver">
+        <source path="RTD/Spi_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Lpspi_Ip.c" />
+            <files mask="Lpspi_Ip_Irq.c" />
+        </source>
+        <source path="RTD/Spi_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Lpspi_Ip.h" />
+            <files mask="Lpspi_Ip_Types.h" />
+        </source>
+    </component>
+    <component brief="" dependency="platform.driver.rte_spi" devices="S32K344 S32K314 S32K324 S32K312 S32K342 S32K341 S32K322 S32K396 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M276 S32M274 S32K310 S32K394" full_name="Flexio_Spi" id="platform.driver.flexio_spi" name="Flexio_Spi" type="driver">
+        <source path="RTD/Spi_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Flexio_Spi_Ip.c" />
+            <files mask="Flexio_Spi_Ip_Irq.c" />
+        </source>
+        <source path="RTD/Spi_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Flexio_Spi_Ip.h" />
+            <files mask="Flexio_Spi_Ip_Irq.h" />
+            <files mask="Flexio_Spi_Ip_Types.h" />
+        </source>
+    </component>
+<component brief="" dependency="platform.driver.rte_uart platform.driver.det" devices="S32K310 S32K344 S32K342 S32K314 S32K324 S32K312 S32K322 S32K341 S32K396 S32K394 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M276 S32M274" full_name="Uart" id="platform.driver.uart" name="Uart" type="driver">
+        <source path="RTD/Uart_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+          <files mask="*.c" />
+        </source>
+        <source path="RTD/Uart_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+          <files mask="*.h" />
+        </source>
+    </component>
+    <component brief="" dependency="" devices="S32K310 S32K344 S32K342 S32K314 S32K324 S32K312 S32K322 S32K341 S32K396 S32K394 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M276 S32M274" full_name="Rte_Uart" id="platform.driver.rte_uart" name="Rte_Uart" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Uart.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Uart.h" />
+        </source>
+    </component>
+    <component brief="" dependency="platform.driver.rte_uart" devices="S32K310 S32K344 S32K342 S32K314 S32K324 S32K312 S32K322 S32K341 S32K396 S32K394 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M276 S32M274" full_name="Lpuart_Uart" id="platform.driver.lpuart_uart" name="Lpuart_Uart" type="driver">
+        <source path="RTD/Uart_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Lpuart_Uart_Ip.c" />
+            <files mask="Lpuart_Uart_Ip_Irq.c" />
+        </source>
+        <source path="RTD/Uart_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Lpuart_Uart_Ip.h" />
+            <files mask="Lpuart_Uart_Ip_Types.h" />
+            <files mask="Lpuart_Uart_Ip_Irq.h" />
+            <files mask="Lpuart_Uart_Ip_HwAccess.h" />
+        </source>
+    </component>
+    <component brief="" dependency="platform.driver.rte_uart" devices="S32K310 S32K344 S32K342 S32K314 S32K324 S32K312 S32K322 S32K341 S32K396 S32K394 S32K311 S32K328 S32K338 S32K348 S32K358 S32K388 S32M276 S32M274" full_name="Flexio_Uart" id="platform.driver.flexio_uart" name="Flexio_Uart" type="driver">
+        <source path="RTD/Uart_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Flexio_Uart_Ip.c" />
+            <files mask="Flexio_Uart_Ip_Irq.c" />
+        </source>
+        <source path="RTD/Uart_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Flexio_Uart_Ip.h" />
+            <files mask="Flexio_Uart_Ip_Types.h" />
+            <files mask="Flexio_Uart_Ip_Irq.h" />
+            <files mask="Flexio_Uart_Ip_HwAccess.h" />
+        </source>
+    </component>
+<component brief="" dependency="platform.driver.rte_wdg platform.driver.wdgif platform.driver.det platform.driver.mcu" devices="S32K310 S32K311 S32K328 S32K338 S32K348 S32K388 S32K312 S32K314 S32K324 S32K342 S32K344 S32K341 S32K322 S32K394 S32K396 S32K358 S32M274 S32M276" full_name="Wdg" id="platform.driver.wdg" name="Wdg" type="driver">
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Swt_Ip*.c" />
+            <files mask="Wdg_43_Instance0.c" />
+            <files mask="Wdg_Channel.c" />
+            <files mask="Wdg_Ipw.c" />
+        </source>
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Swt_Ip*.h" />
+            <files mask="Wdg_43_Instance0.h" />
+            <files mask="Wdg_Channel*.h" />
+            <files mask="Wdg_Ipw*.h" />
+            <files mask="Wdg_EnvCfg*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_wdg platform.driver.wdgif platform.driver.det platform.driver.mcu" devices="S32K328 S32K338 S32K348 S32K388 S32K324 S32K322 S32K394 S32K396 S32K358" full_name="wdg_43_instance1" id="platform.driver.wdg_43_instance1" name="wdg_43_instance1" type="driver">
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Swt_Ip*.c" />
+            <files mask="Wdg_43_Instance1.c" />
+            <files mask="Wdg_Channel.c" />
+            <files mask="Wdg_Ipw.c" />
+        </source>
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Swt_Ip*.h" />
+            <files mask="Wdg_43_Instance1.h" />
+            <files mask="Wdg_Channel*.h" />
+            <files mask="Wdg_Ipw*.h" />
+            <files mask="Wdg_EnvCfg*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_wdg platform.driver.wdgif platform.driver.det platform.driver.mcu" devices="S32K328 S32K338 S32K348 S32K388 S32K394 S32K396 S32K358" full_name="wdg_43_instance2" id="platform.driver.wdg_43_instance2" name="wdg_43_instance2" type="driver">
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Swt_Ip*.c" />
+            <files mask="Wdg_43_Instance2.c" />
+            <files mask="Wdg_Channel.c" />
+            <files mask="Wdg_Ipw.c" />
+        </source>
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Swt_Ip*.h" />
+            <files mask="Wdg_43_Instance2.h" />
+            <files mask="Wdg_Channel*.h" />
+            <files mask="Wdg_Ipw*.h" />
+            <files mask="Wdg_EnvCfg*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_wdg platform.driver.wdgif platform.driver.det platform.driver.mcu" devices="S32K388" full_name="wdg_43_instance3" id="platform.driver.wdg_43_instance3" name="wdg_43_instance3" type="driver">
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Swt_Ip*.c" />
+            <files mask="Wdg_43_Instance3.c" />
+            <files mask="Wdg_Channel.c" />
+            <files mask="Wdg_Ipw.c" />
+        </source>
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Swt_Ip*.h" />
+            <files mask="Wdg_43_Instance3.h" />
+            <files mask="Wdg_Channel*.h" />
+            <files mask="Wdg_Ipw*.h" />
+            <files mask="Wdg_EnvCfg*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_wdg platform.driver.wdgif platform.driver.det platform.driver.mcu" devices="S32M274 S32M276" full_name="wdg_43_instance4" id="platform.driver.wdg_43_instance4" name="wdg_43_instance4" type="driver">
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="AeWdog_Ip*.c" />
+            <files mask="Wdg_43_Instance4.c" />
+            <files mask="Wdg_Channel.c" />
+            <files mask="Wdg_Ipw.c" />
+        </source>
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="AeWdog_Ip*.h" />
+            <files mask="Wdg_43_Instance4.h" />
+            <files mask="Wdg_Channel*.h" />
+            <files mask="Wdg_Ipw*.h" />
+            <files mask="Wdg_EnvCfg*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_wdg" devices="S32K310 S32K311 S32K328 S32K338 S32K348 S32K388 S32K312 S32K314 S32K324 S32K342 S32K344 S32K341 S32K322 S32K394 S32K396 S32K358 S32M274 S32M276" full_name="Swt_Ip" id="platform.driver.swt_ip" name="Swt_Ip" type="driver">
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Swt_Ip*.c" />
+        </source>
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Swt_Ip*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="platform.driver.rte_wdg" devices="S32M274 S32M276" full_name="AeWdog_Ip" id="platform.driver.aewdog_ip" name="AeWdog_Ip" type="driver">
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="AeWdog_Ip*.c" />
+        </source>
+        <source path="RTD/Wdg_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="AeWdog_Ip*.h" />
+        </source>
+    </component>
+
+    <component brief="" dependency="" devices="S32K310 S32K311 S32K328 S32K338 S32K348 S32K388 S32K312 S32K314 S32K324 S32K342 S32K344 S32K341 S32K322 S32K394 S32K396 S32K358 S32M274 S32M276" full_name="Rte_Swt" id="platform.driver.rte_wdg" name="Rte_Swt" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Wdg.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Wdg.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.osif" devices="S32K311 S32K328 S32K338 S32K348 S32K388 S32K314 S32K324 S32K344 S32K312 S32K341 S32K342 S32K396 S32K358 S32M276" full_name="WdgIf" id="platform.driver.wdgif" name="WdgIf" type="driver">
+        <source path="RTD/WdgIf_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="WdgIf.c" />
+        </source>
+        <source path="RTD/WdgIf_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="WdgIf.h" />
+            <files mask="WdgIf_Cfg*.h" />
+            <files mask="WdgIf_Types*.h" />
+        </source>
+    </component>
+
+<component brief="" dependency="platform.driver.rte_zipwire platform.driver.det" devices="S32K396" full_name="Zipwire" id="platform.driver.zipwire" name="Zipwire" type="driver">
+        <source path="RTD/Zipwire_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="*.c" />
+        </source>
+        <source path="RTD/Zipwire_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="*.h" />
+        </source>
+    </component>
+
+    <component brief="" devices="S32K396" full_name="Zipwire_Ip" id="platform.driver.zipwire_ip" name="Zipwire_Ip" type="driver">
+        <source path="RTD/Zipwire_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="Zipwire_Ip*.c" />
+        </source>
+        <source path="RTD/Zipwire_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="Zipwire_Ip*.h" />
+        </source>
+    </component>
+    
+    
+    <component brief="" dependency="" devices="S32K396" full_name="Rte_Zipwire" id="platform.driver.rte_zipwire" name="Rte_Zipwire" type="utilities">
+        <source path="RTD/Rte_TS_T40D34M30I0R0/src" target_path="RTD/src" type="src">
+            <files mask="SchM_Zipwire.c" />
+        </source>
+        <source path="RTD/Rte_TS_T40D34M30I0R0/include" target_path="RTD/include" type="c_include">
+            <files mask="SchM_Zipwire.h" />
+        </source>
+    </component>
+</components>
+</ksdk:manifest>

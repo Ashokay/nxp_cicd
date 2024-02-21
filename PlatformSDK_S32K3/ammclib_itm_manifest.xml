@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" api_version="3.0.0" format_version="3.2" id="PlatformSDK_S32K3" name="S32K3 AUTOSAR 4.4 - R21-11 RTD 3.0.0 
+           D2303" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.2.xsd">
+  <ksdk id="PlatformSDK_S32K3" name="S32K3 AUTOSAR 4.4 - R21-11 RTD 3.0.0 
+           D2303" version="3.0.0" />
+   <components>
+    <component
+      id="platform.middleware.ammclib"
+      full_name="AMMCLib"
+      brief="Automotive Math and Motor Control Library Set for S32K3xx devices, supporting the ARM M7 core based devices"
+      dependency=""
+      name="ammclib"
+      type="middleware"
+      devices="S32K310 S32K311 S32K312 S32K314 S32K322 S32K324 S32K328 S32K338 S32K341 S32K342 S32K344 S32K348 S32K358 S32K394 S32K396 S32M274 S32M276 "
+      check_reports="false"
+      version="1.1.34">
+      <source path="S32K3xx_AMMCLIB/include" type="c_include" target_path="AMMCLib/include">
+        <files mask="*.h"/>
+      </source>
+      <source path="S32K3xx_AMMCLIB/lib/$|compiler|" type="lib" target_path="AMMCLib/lib" method="link">
+        <files mask="*.a"/>
+      </source>
+      </component>
+   </components>
+</ksdk:manifest>
