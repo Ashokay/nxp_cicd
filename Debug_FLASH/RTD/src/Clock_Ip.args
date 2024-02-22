@@ -17,7 +17,7 @@
 -I"/app/PlatformSDK_S32K3/RTD/Mcu_TS_T40D34M30I0R0/include"
 -I"/app/PlatformSDK_S32K3/RTD/Rte_TS_T40D34M30I0R0/include"
 -I"/app/PlatformSDK_S32K3/RTD/Port_TS_T40D34M30I0R0/include"
--I"/app/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M30I0R0/wizard_data/S32K310"
+-I"/app/PlatformSDK_S32K3/RTD/BaseNXP_TS_T40D34M30I0R0/wizard_data/S32K324"
 -I"/home/ubuntu/nxp_test/eg_M7_0/board"
 -Os
 -funsigned-char
