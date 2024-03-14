@@ -10,8 +10,5 @@ COPY . /app
 # Set the working directory
 WORKDIR /app
 
-#Copy files
-#COPY  Mcal.h  /src
-
 # Build project command
 RUN cd /app/Debug_FLASH && make
